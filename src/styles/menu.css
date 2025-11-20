@@ -1,0 +1,142 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+#dishes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    /* Largura fixa para garantir uniformidade e alinhamento perfeito */
+    width: 280px; 
+    padding: 20px;
+    background-color: var(--color-neutral-0);
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    /* Transição suave para os efeitos de hover */
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.dish:hover {
+    /* Efeito de subida/pop */
+    transform: translateY(-5px); 
+    /* Sombra mais intensa */
+    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.15); 
+}
+
+.dish-heart {
+    position: absolute;
+    background-color: var(--color-primary-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.563rem;
+    color: var(--color-neutral-0);
+    width: 70px;
+    height: 70px;
+    right: -10px;
+    top: -10px;
+    border-radius: 0px 37.5px 0px 42.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.dish-heart:hover {
+    background-color: var(--color-primary-6);
+    transform: scale(1.1);
+}
+
+.dish-image {
+    /* Define uma área de 180x180px para todas as imagens */
+    width: 180px; 
+    height: 180px;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar ou distorcer */
+}
+
+.dish-title {
+    color: var(--color-neutral-1);
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.dish-description {
+    color: var(--color-neutral-1);
+    opacity: 0.8;
+    text-align: center;
+    font-size: 0.9rem;
+    /* Garante altura mínima para manter os botões alinhados */
+    min-height: 40px; 
+}
+
+.dish-rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.dish-rate i {
+    color: var(--color-primary-6);
+}
+
+.dish-rate span {
+    color: var(--color-neutral-1);
+    opacity: 0.8;
+}
+
+.dish-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.dish-price h4 {
+    color: var(--color-primary-6);
+    font-size: 1.25rem;
+}
+
+.dish-price .btn-default {
+    padding: 8px;
+    font-size: 1rem;
+    background-color: var(--color-primary-5);
+    color: var(--color-neutral-0);
+}
+
+@media screen and (max-width: 1170px) {
+    #dishes {
+        gap: 24px;
+    }
+
+    .dish {
+        /* Permite que dois cards caibam na tela em telas menores que 1170px */
+        width: 45%; 
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dish {
+        width: 100%;
+    }
+
+    #menu .section-subtitle {
+        text-align: center;
+    }
+};
